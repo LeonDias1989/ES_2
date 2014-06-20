@@ -1,0 +1,32 @@
+public class BinomioEntidade {
+
+	private int n, k, coeficiente;
+
+	public BinomioEntidade(int n, int k) {
+		super();
+		this.n = n;
+		this.k = k;
+	}
+
+	public void setN(int n) {
+		this.n = n;
+	}
+
+	public void setK(int k) {
+		this.k = k;
+	}
+
+	public int getCoeficiente() {
+
+		return fatorial(n) / (fatorial(k) * fatorial(n - k));
+	}
+
+	private int fatorial(int i) {
+		if (i <= 1)
+			return 1;
+
+		return fatorial(i - 1) * i;
+
+	}
+
+}

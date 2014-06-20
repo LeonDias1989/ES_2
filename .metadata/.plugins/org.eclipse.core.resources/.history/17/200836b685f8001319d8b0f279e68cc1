@@ -1,0 +1,23 @@
+public class BinomioEntidade {
+
+	private int n, k, coeficiente;
+
+	public int getCoeficiente() {
+		return coeficiente;
+	}
+
+	public BinomioEntidade(int n, int k) {
+		super();
+		this.n = n;
+		this.k = k;
+	}
+
+	public void setN(int n) {
+		this.n = n;
+	}
+
+	public void setK(int k) {
+		this.k = k;
+	}
+
+}
