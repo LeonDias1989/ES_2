@@ -1,0 +1,70 @@
+package senacrs.com.br.view;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
+public class TelaComentar extends JFrame {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private JLabel lblPaisagemDaSerra;
+	private JLabel lblNewLabel;
+	private JButton btnComentar;
+	private String texto = "- ";
+	private JTextArea textArea;
+	private JTextField textField;
+
+	public TelaComentar() {
+		getContentPane().setBackground(Color.WHITE);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 675, 454);
+		getContentPane().setLayout(null);
+
+		lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon(TelaComentar.class
+				.getResource("/senacrs/com/br/Images/lindaPaisagem.jpg")));
+		lblNewLabel.setBounds(188, -8, 380, 217);
+		getContentPane().add(lblNewLabel);
+
+		lblPaisagemDaSerra = new JLabel("Montanhas Verdes");
+		lblPaisagemDaSerra.setBounds(188, 220, 116, 14);
+		getContentPane().add(lblPaisagemDaSerra);
+
+		btnComentar = new JButton("Comentar");
+		btnComentar.setBounds(387, 350, 116, 23);
+		btnComentar.addActionListener(new ActionListener() {
+
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+
+		getContentPane().add(btnComentar);
+		
+		textArea = new JTextArea();
+		textArea.setBounds(188, 245, 286, 94);
+		getContentPane().add(textArea);
+		
+		textField = new JTextField();
+		textField.setBounds(188, 350, 189, 20);
+		getContentPane().add(textField);
+		textField.setColumns(10);
+
+		setVisible(true);
+	}
+
+	public static void main(String[] args) {
+		new TelaComentar();
+	}
+}
