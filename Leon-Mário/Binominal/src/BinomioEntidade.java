@@ -1,3 +1,5 @@
+import javax.swing.JOptionPane;
+
 public class BinomioEntidade {
 
 	private int n, k, coeficiente;
@@ -17,8 +19,17 @@ public class BinomioEntidade {
 	}
 
 	public int getCoeficiente() {
+		int result = 0;
+		try {
 
-		return fatorial(n) / (fatorial(k) * fatorial(n - k));
+			result = fatorial(n) / (fatorial(k) * fatorial(n - k));
+
+		} catch (ArithmeticException a) {
+			JOptionPane.showMessageDialog(null, "Erro\nExceção Aritmética",
+					"Erro", JOptionPane.ERROR_MESSAGE);
+		}
+		return result;
+
 	}
 
 	private int fatorial(int i) {
@@ -27,6 +38,11 @@ public class BinomioEntidade {
 
 		return fatorial(i - 1) * i;
 
+	}
+
+	@Override
+	public String toString() {
+		return "" + coeficiente;
 	}
 
 }
